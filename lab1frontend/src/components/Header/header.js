@@ -16,6 +16,12 @@ const header = (props) => {
                         <li className="nav-item active">
                             <Link className="nav-link" to={"/books"}>Books</Link>
                         </li>
+                        <li className="nav-item active">
+                            <Link className="nav-link" to={"/categories"}>Categories</Link>
+                        </li>
+                        <li className="nav-item active">
+                            <Link className="nav-link" to={"/authors"}>Authors</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

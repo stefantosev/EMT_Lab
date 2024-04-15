@@ -1,4 +1,8 @@
 import React from "react";
+import BooksDel from "../BooksTerm/booksTerm";
+import {Link} from "react-router-dom";
+import BooksEdit from "../BooksEdit/booksEdit";
+import BooksTerm from "../BooksTerm/booksTerm";
 
 const books = (props) =>{
     return (
@@ -18,16 +22,18 @@ const books = (props) =>{
                       <tbody>
                         {props.books.map((term) => {
                             return (
-                                <tr>
-                                    <td>{term.name}</td>
-                                    <td>{term.category}</td>
-                                    <td>{term.author.name + term.author.surname}</td>
-                                    <td>{term.availableCopies}</td>
-                                </tr>
+                                <BooksTerm term={term} onDelete={props.onDelete} onEdit={props.onEdit}/>
                             )
                         })}
                       </tbody>
                   </table>
+              </div>
+              <div className="col mb-3">
+                  <div className="row">
+                      <div className="col-sm-12 col-md-12">
+                          <Link className={"btn btn-block btn-dark"} to={"/books/add"}>Add new book</Link>
+                      </div>
+                  </div>
               </div>
           </div>
       </div>
