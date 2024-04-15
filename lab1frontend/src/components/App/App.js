@@ -33,11 +33,13 @@ class App extends Component {
                 <Routes>
                     <Route path="/books" element={<Books books={this.state.books}
                                                          onDelete={this.deleteBook}
-                                                         onEdit={this.getBook}/>}
+                                                         onEdit={this.getBook}
+                                                         onTake={this.takeBook}/>}
                     />
                     <Route path={"/"} element={ <Books books={this.state.books}
                                                        onDelete={this.deleteBook}
-                                                       onEdit={this.getBook}/>}
+                                                       onEdit={this.getBook}
+                                                       onTake={this.takeBook}/>}
                     />
                     <Route path={"/categories"} element={ <Categories categories={this.state.categories}/>}/>
                     <Route path={"/authors"} element={ <Authors authors={this.state.authors}/>}/>
@@ -112,6 +114,12 @@ class App extends Component {
                     selectedBook: data.data
                 })
             })
+    }
+    takeBook = (id) => {
+        BookService.takeBook(id)
+            .then(() => {
+                this.loadBooks();
+            });
     }
 
 

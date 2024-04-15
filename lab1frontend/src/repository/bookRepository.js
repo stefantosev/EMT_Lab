@@ -19,6 +19,9 @@ const BookService = {
     getBook: (id) => {
         return axios.get(`/books/${id}`);
     },
+    takeBook: (id) => {
+        return axios.put(`/books/taken/${id}`);
+    }
 
     //DTO PROBLEM
     // addBook : (name, author, category, availabeCopies) =>{

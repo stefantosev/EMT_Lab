@@ -18,6 +18,10 @@ const booksDel = (props) => {
                       onClick={() => props.onEdit(props.term.id)} to={`/books/edit/${props.term.id}`}>
                     Edit
                 </Link>
+                <Link className={"btn btn-success"}
+                      onClick={() => props.onTake(props.term.id)}>
+                    Take
+                </Link>
             </td>
         </tr>
 
