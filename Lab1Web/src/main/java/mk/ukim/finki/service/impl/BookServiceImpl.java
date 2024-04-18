@@ -71,4 +71,9 @@ public class BookServiceImpl implements BookService {
         book.setAvailableCopies(book.getAvailableCopies() - 1);
         bookRepository.save(book);
     }
+
+    @Override
+    public List<Book> filterBookByName(String name) {
+        return bookRepository.findAllByNameContaining(name);
+    }
 }

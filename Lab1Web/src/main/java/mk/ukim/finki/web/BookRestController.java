@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -39,6 +40,12 @@ public class BookRestController {
         return this.bookService.findBookById(id)
                 .map(product -> ResponseEntity.ok().body(product))
                 .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    //dopolnitelno
+    @GetMapping("/search/{name}")
+    public List<Book> searchBookByName(@PathVariable String name){
+       return bookService.filterBookByName(name);
     }
 
 

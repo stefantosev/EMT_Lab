@@ -21,4 +21,8 @@ public interface BookService {
     ResponseEntity<Book> update(Book book);
     ResponseEntity<Book> addNewBook(Book book);
     void taken(Long id);
+
+    List<Book> filterBookByName(String name);
+
+
 }

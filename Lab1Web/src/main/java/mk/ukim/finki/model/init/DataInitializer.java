@@ -34,6 +34,10 @@ public class DataInitializer implements CommandLineRunner {
         authorRepository.save(new Author("Stephen", "King", countryRepository.findCountryByName("United States").get()));
         authorRepository.save(new Author("J.K.", "Rowling", countryRepository.findCountryByName("United Kingdom").get()));
         authorRepository.save(new Author("Sinan", "Sakich", countryRepository.findCountryByName("United Kingdom").get()));
+        authorRepository.save(new Author("Eckart", "Dole", countryRepository.findCountryByName("United States").get()));
+        authorRepository.save(new Author("Grant", "Cardone", countryRepository.findCountryByName("United Kingdom").get()));
+        authorRepository.save(new Author("Andrew", "Tate", countryRepository.findCountryByName("United Kingdom").get()));
+        authorRepository.save(new Author("Viktor", "Frankl", countryRepository.findCountryByName("United Kingdom").get()));
 
         // Initialize book data
         bookRepository.save(new Book("The Shining", BooksCategory.THRILLER, 10, authorRepository.findByNameAndAndSurname("Stephen", "King").get()));
